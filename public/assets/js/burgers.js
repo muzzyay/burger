@@ -26,7 +26,7 @@ $(function () {
 
         };
 
-        if (newBurger.length > 3) {
+        if (newBurger.name.length > 3) {
             $.ajax("/api/burgers", {
                 type: "POST",
                 data: newBurger
