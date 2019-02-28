@@ -33,7 +33,8 @@
         <ul>
             {{#each burgers}}
             {{#if devoured}}
-            <li>{{id}}. {{burger_name}}</li><br>
+            <li>{{id}}. {{burger_name}} <button class="delete-btn" data-id="{{id}}">Delete</button></li><br>
+
             {{/if}}
             {{/each}}
         </ul>

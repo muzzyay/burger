@@ -24,9 +24,8 @@ var orm = {
     },
     // An example of objColVals would be {name: panther, sleepy: true}
     updateOne: function(tableName, columnNameOne, value, columnNameTwo, id, cb) {
-      var queryString = "UPDATE " + tableName+" SET "+columnNameOne+" = "+value+" WHERE "+columnNameTwo+" = "+id+" ;"
+      var queryString = "UPDATE " + tableName+" SET "+columnNameOne+" = "+value+" WHERE "+columnNameTwo+" = "+id+" ;";
   
-      console.log(queryString);
       connection.query(queryString, function(err, result) {
         if (err) {
           throw err;
@@ -35,6 +34,18 @@ var orm = {
         cb(result);
       });
     },
+
+    deleteOne: function(tableName, columnName, value, cb){
+      var queryString = "DELETE FROM "+tableName+" WHERE "+columnName+" = "+value+" ;";
+      connection.query(queryString, function(err, result){
+        if(err){
+          throw err;
+        }
+        cb(result);
+      })
+
+
+    }
     
   };
   

@@ -43,5 +43,16 @@ $(function () {
 
     });
 
+    $(".delete-btn").on("click", function(event){
+        event.preventDefault();
+        var theId = $(this).data("id");
+
+        $.ajax("/api/burgers/"+theId, {
+            type: "DELETE"
+        }).then(function(){
+            location.reload();
+        })
+    });
+
 
 });

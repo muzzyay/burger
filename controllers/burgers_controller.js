@@ -35,4 +35,15 @@ router.put("/api/burgers/:id", function (req, res) {
     });
 });
 
+router.delete("/api/burgers/:id", function (req, res) {
+
+
+
+    burger.deleteOne(req.params.id, function (result) {
+
+        res.status(200).end();
+
+    });
+});
+
 module.exports = router;
